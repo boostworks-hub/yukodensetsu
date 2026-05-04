@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社概要 | 雄晃電設</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#7C5CBF;--purple-light:#9B7DD4;--purple-dark:#5A3F9A;--purple-deep:#2D1F5E;--gold:#C9A84C;--gold-light:#E8C96A;--gold-dark:#A07830;--white:#FFFFFF;--off-white:#F8F6FF;--gray-light:#F0EDF8;--gray:#888;--dark:#1A1228;--dark2:#231A38;--text:#2C2040;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);border-bottom:2px solid var(--gold);box-shadow:0 2px 20px rgba(124,92,191,0.12);}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:70px;}
+.logo{display:flex;flex-direction:column;line-height:1;}
+.logo-jp{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:900;color:var(--purple-dark);letter-spacing:0.05em;}
+.logo-en{font-family:'Oswald',sans-serif;font-size:10px;color:var(--gold);letter-spacing:0.2em;}
+nav{display:flex;gap:32px;}
+nav a{font-size:13px;font-weight:500;color:var(--text);letter-spacing:0.08em;position:relative;padding-bottom:4px;transition:color 0.3s;}
+nav a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:center;transition:transform 0.3s;}
+nav a:hover{color:var(--purple);}
+nav a:hover::after,nav a.active::after{transform:scaleX(1);}
+nav a.active{color:var(--purple);}
+.header-right{display:flex;align-items:center;gap:16px;}
+.header-tel{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--purple-dark);display:flex;align-items:center;gap:6px;}
+.btn-contact{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;padding:10px 20px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:0.1em;transition:all 0.3s;white-space:nowrap;}
+.btn-contact:hover{background:linear-gradient(135deg,var(--gold),var(--gold-dark));transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--purple-dark);transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(255,255,255,0.98);border-bottom:2px solid var(--gold);padding:20px 24px;z-index:999;flex-direction:column;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:14px 0;border-bottom:1px solid var(--gray-light);font-size:15px;font-weight:500;}
+.mobile-menu a:last-child{border-bottom:none;}
+
+.page-hero{margin-top:70px;background:linear-gradient(135deg,var(--purple-deep) 0%,var(--purple-dark) 60%,var(--dark) 100%);padding:80px 24px 72px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,168,76,0.18) 0%,transparent 60%);}
+.page-hero::after{content:'COMPANY';position:absolute;right:-10px;bottom:-20px;font-family:'Oswald',sans-serif;font-size:140px;font-weight:700;color:rgba(255,255,255,0.04);white-space:nowrap;}
+.page-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.page-hero-tag{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.3em;color:var(--gold);margin-bottom:16px;display:block;}
+.page-hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;line-height:1.3;margin-bottom:16px;}
+.page-hero p{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.9;max-width:560px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-top:32px;}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.5);}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb .sep{color:rgba(255,255,255,0.3);}
+
+/* MESSAGE */
+.message-section{padding:96px 24px;background:#fff;}
+.message-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}
+.message-img-wrap{position:relative;}
+.message-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;box-shadow:0 12px 40px rgba(124,92,191,0.15);}
+.message-img-placeholder{
+  width:100%;aspect-ratio:3/4;border-radius:8px;
+  background:linear-gradient(135deg,var(--purple-deep),var(--purple-dark));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.6);font-size:48px;
+}
+.message-img-label{
+  position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:var(--dark);font-weight:700;font-size:12px;letter-spacing:0.1em;
+  padding:8px 20px;border-radius:100px;white-space:nowrap;
+  box-shadow:0 4px 16px rgba(201,168,76,0.3);
+}
+.message-body{}
+.message-tag{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.3em;color:var(--gold);display:block;margin-bottom:12px;}
+.message-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--purple-deep);line-height:1.4;margin-bottom:28px;}
+.message-text{font-size:15px;line-height:2.1;color:var(--text);margin-bottom:16px;}
+.message-sign{
+  margin-top:32px;padding-top:24px;border-top:1px solid var(--gray-light);
+  font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gray);
+}
+.message-sign strong{font-size:20px;color:var(--purple-deep);display:block;margin-top:4px;}
+
+/* TABLE */
+.table-section{padding:80px 24px;background:var(--off-white);position:relative;}
+.table-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--purple-light) 1px,transparent 1px);background-size:24px 24px;opacity:0.05;}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-tag{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.3em;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:4px;display:inline-block;margin-bottom:14px;}
+.section-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:var(--purple-deep);}
+.section-title span{color:var(--gold);}
+.company-table{max-width:800px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(124,92,191,0.1);position:relative;z-index:1;}
+.company-table table{width:100%;border-collapse:collapse;background:#fff;}
+.company-table tr{border-bottom:1px solid var(--gray-light);}
+.company-table tr:last-child{border-bottom:none;}
+.company-table th{
+  width:180px;padding:18px 24px;
+  background:linear-gradient(135deg,var(--purple-deep),var(--purple-dark));
+  color:#fff;font-size:13px;font-weight:700;letter-spacing:0.08em;
+  vertical-align:top;text-align:left;
+}
+.company-table td{padding:18px 24px;font-size:14px;color:var(--text);line-height:1.8;}
+.company-table tr:nth-child(even) td{background:var(--off-white);}
+
+/* MAP */
+.map-section{padding:80px 24px;background:#fff;}
+.map-inner{max-width:1100px;margin:0 auto;}
+.map-wrap{border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(124,92,191,0.12);height:420px;}
+.map-wrap iframe{width:100%;height:100%;border:none;}
+.map-info{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-top:32px;
+}
+.map-info-card{
+  background:var(--off-white);border-radius:8px;padding:20px 24px;
+  border-left:3px solid var(--gold);
+}
+.map-info-card h4{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.2em;color:var(--gold);margin-bottom:8px;}
+.map-info-card p{font-size:14px;color:var(--text);line-height:1.7;}
+
+.cta-band{background:linear-gradient(135deg,var(--purple-deep),var(--purple-dark),var(--dark));padding:72px 24px;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,0.15) 0%,transparent 65%);}
+.cta-band h2{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,36px);font-weight:900;color:#fff;margin-bottom:12px;position:relative;z-index:1;}
+.cta-band p{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:36px;line-height:1.9;position:relative;z-index:1;}
+.cta-tel{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--gold-light);display:block;margin-bottom:6px;letter-spacing:0.05em;position:relative;z-index:1;}
+.cta-tel-note{font-size:12px;color:rgba(255,255,255,0.55);position:relative;z-index:1;margin-bottom:32px;}
+.cta-btns{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--dark);padding:18px 44px;font-weight:700;font-size:15px;letter-spacing:0.1em;border-radius:4px;transition:all 0.3s;box-shadow:0 4px 20px rgba(201,168,76,0.4);}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(201,168,76,0.5);}
+.btn-outline-white{border:2px solid rgba(255,255,255,0.5);color:#fff;padding:16px 40px;font-size:15px;font-weight:500;border-radius:4px;transition:all 0.3s;}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:#fff;}
+
+footer{background:var(--dark);border-top:2px solid var(--gold);padding:60px 24px 0;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px;}
+.footer-logo-jp{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;}
+.footer-logo-en{font-family:'Oswald',sans-serif;font-size:11px;color:var(--gold);letter-spacing:0.2em;margin-bottom:16px;}
+.footer-info{font-size:13px;color:rgba(255,255,255,0.55);line-height:2;}
+.footer-col h4{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.2em;color:var(--gold);margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid rgba(201,168,76,0.3);}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.6);transition:color 0.3s;display:flex;align-items:center;gap:6px;}
+.footer-col ul li a::before{content:'›';color:var(--gold);}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.35);max-width:1100px;margin:0 auto;}
+
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+.fade-left{opacity:0;transform:translateX(-28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-left.visible{opacity:1;transform:translateX(0);}
+.fade-right{opacity:0;transform:translateX(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-right.visible{opacity:1;transform:translateX(0);}
+
+@media(max-width:900px){
+  nav,.header-right .btn-contact{display:none;}
+  .hamburger{display:flex;}
+  .message-inner{grid-template-columns:1fr;gap:40px;}
+  .company-table th{width:120px;}
+  .map-info{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .footer-inner{grid-template-columns:1fr;}
+  .header-right .header-tel{display:none;}
+  .company-table th{width:100px;padding:14px 16px;font-size:12px;}
+  .company-table td{padding:14px 16px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-jp">雄晃電設</span><span class="logo-en">YUKO DENSETSU</span></a>
+    <nav>
+      <a href="index.html">TOP</a><a href="service.html">施工案内</a><a href="works.html">施工実績</a><a href="company.html" class="active">会社概要</a><a href="recruit.html">採用情報</a><a href="contact.html">お問い合わせ</a>
+    </nav>
+    <div class="header-right">
+      <div class="header-tel">📞 048-987-3372</div>
+      <a href="contact.html" class="btn-contact">無料相談</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">TOP</a><a href="service.html">施工案内</a><a href="works.html">施工実績</a><a href="company.html">会社概要</a><a href="recruit.html">採用情報</a><a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-tag">COMPANY</span>
+    <h1>会社概要</h1>
+    <p>越谷に根ざした電気工事のプロとして、地域の皆さまの暮らしを安心・安全に支え続けます。</p>
+    <div class="breadcrumb"><a href="index.html">TOP</a><span class="sep">›</span><span>会社概要</span></div>
+  </div>
+</div>
+
+<!-- 代表メッセージ -->
+<section class="message-section">
+  <div class="message-inner">
+    <div class="message-img-wrap fade-left">
+      <div class="message-img-placeholder">
+        <span>👤</span>
+        <span style="font-size:14px;margin-top:12px;font-family:'Noto Sans JP',sans-serif;">代表者写真</span>
+      </div>
+      <span class="message-img-label">代表　谷山 裕介</span>
+    </div>
+    <div class="message-body fade-right">
+      <span class="message-tag">MESSAGE FROM PRESIDENT</span>
+      <h2 class="message-title">電気工事は、<br>お客様の生活と安全に<br>直結する仕事です。</h2>
+      <p class="message-text">電気工事は、お客様の生活と安全に直結する仕事です。どんな小さな工事でも手を抜かず、丁寧・迅速・誠実をモットーに一件一件に向き合ってまいりました。</p>
+      <p class="message-text">業界歴10年以上で培った技術と経験をもとに、有資格者が責任を持って対応します。専門用語をできる限り使わず、わかりやすいご説明と明朗なお見積りで、初めての方にも安心してご依頼いただける環境を整えています。</p>
+      <p class="message-text">雄晃電設は、越谷の地に根ざした電気のプロとして、皆さまの暮らしを明るく支え続けます。どうぞお気軽にご相談ください。</p>
+      <div class="message-sign">
+        雄晃電設　代表
+        <strong>谷山 裕介</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 会社概要テーブル -->
+<section class="table-section">
+  <div class="section-header fade-up">
+    <span class="section-tag">COMPANY INFO</span>
+    <h2 class="section-title">会社<span>概要</span></h2>
+  </div>
+  <div class="company-table fade-up">
+    <table>
+      <tr><th>会社名</th><td>雄晃電設</td></tr>
+      <tr><th>代表者</th><td>谷山 裕介</td></tr>
+      <tr><th>所在地</th><td>〒343-0027　埼玉県越谷市七左町６－１２１－１</td></tr>
+      <tr><th>電話番号</th><td>048-987-3372</td></tr>
+      <tr><th>営業時間</th><td>8:00〜18:00（日曜・祝日定休）</td></tr>
+      <tr><th>業種</th><td>電気工事業</td></tr>
+      <tr><th>主な事業内容</th><td>一般電気工事／照明・LED工事／エアコン・空調工事／太陽光発電・EV充電設備工事</td></tr>
+      <tr><th>対応エリア</th><td>埼玉県全域（越谷市・草加市・春日部市・さいたま市・吉川市ほか）、東京都一部</td></tr>
+      <tr><th>保有資格</th><td>第一種電気工事士　／　第二種電気工事士</td></tr>
+      <tr><th>業界歴</th><td>10年以上</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- アクセス・地図 -->
+<section class="map-section">
+  <div class="section-header fade-up">
+    <span class="section-tag">ACCESS</span>
+    <h2 class="section-title">アクセス<span>・地図</span></h2>
+  </div>
+  <div class="map-inner">
+    <div class="map-wrap fade-up">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.0!2d139.7900!3d35.8700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s%E5%9F%BC%E7%8E%89%E7%9C%8C%E8%B6%8A%E8%B0%B7%E5%B8%82%E4%B8%83%E5%B7%A6%E7%94%BA%EF%BC%96%EF%BC%8D%EF%BC%91%EF%BC%92%EF%BC%91%EF%BC%8D%EF%BC%91!5e0!3m2!1sja!2sjp!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="map-info fade-up">
+      <div class="map-info-card">
+        <h4>📍 所在地</h4>
+        <p>〒343-0027<br>埼玉県越谷市七左町<br>６－１２１－１</p>
+      </div>
+      <div class="map-info-card">
+        <h4>📞 電話番号</h4>
+        <p>048-987-3372<br>受付：8:00〜18:00<br>日曜・祝日定休</p>
+      </div>
+      <div class="map-info-card">
+        <h4>🚃 最寄り駅</h4>
+        <p>東武スカイツリーライン<br>「越谷駅」より<br>お車にてご来訪ください</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>現地調査・お見積りは無料です。どんな些細なことでもお電話またはフォームからどうぞ。</p>
+  <a href="tel:0489873372" class="cta-tel">048-987-3372</a>
+  <p class="cta-tel-note">受付時間 8:00〜18:00（日祝定休）</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-gold">お問い合わせフォームへ</a>
+    <a href="service.html" class="btn-outline-white">施工案内を見る</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-jp">雄晃電設</div>
+      <div class="footer-logo-en">YUKO DENSETSU</div>
+      <div class="footer-info">〒343-0027<br>埼玉県越谷市七左町６－１２１－１<br>TEL: 048-987-3372<br>受付: 8:00〜18:00（日祝定休）<br>代表: 谷山 裕介</div>
+    </div>
+    <div class="footer-col"><h4>SERVICES</h4><ul><li><a href="service.html">一般電気工事</a></li><li><a href="service.html">照明・LED工事</a></li><li><a href="service.html">エアコン・空調工事</a></li><li><a href="service.html">太陽光・EV充電設備</a></li></ul></div>
+    <div class="footer-col"><h4>PAGES</h4><ul><li><a href="index.html">TOP</a></li><li><a href="works.html">施工実績</a></li><li><a href="company.html">会社概要</a></li><li><a href="recruit.html">採用情報</a></li><li><a href="contact.html">お問い合わせ</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2024 雄晃電設 All Rights Reserved.</div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileMenu.classList.toggle('open');});
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
