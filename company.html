@@ -294,5 +294,17 @@ hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobil
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
 document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>observer.observe(el));
 </script>
+                    <!-- ▼ じーむれす トラッキング ▼ -->
+<script>
+(function() {
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbx1_64SYwWsx-p9Fyednfe3UH90IO2-DMtAH7SMPvOwKs5MizF4Y2mGTGPiaP0Pjr1A/exec';
+  var CLIENT_ID = '17';
+  var ua = navigator.userAgent.toLowerCase();
+  var device = /iphone|android.*mobile/.test(ua) ? 'スマホ' : /ipad/.test(ua) ? 'タブレット' : 'PC';
+  var params = '?id=' + CLIENT_ID + '&mode=track&device=' + encodeURIComponent(device);
+  fetch(GAS_URL + params, { mode: 'no-cors' }).catch(function(){});
+})();
+</script>
+<!-- ▲ じーむれす トラッキング ▲ -->
 </body>
 </html>
